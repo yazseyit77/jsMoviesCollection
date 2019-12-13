@@ -7,7 +7,7 @@ class Api::V1::MoviesController < ApplicationController
         render json: @movies.to_json(:include => {:user => {:only => [:name]}}, :except => [:created_at, :updated_at]), status: 200
 
 
-        # @movies = Api.get_movies
+        # @movies = Api.where("shooter")
         # render json: @movies
     end
 
@@ -39,10 +39,10 @@ class Api::V1::MoviesController < ApplicationController
 
     private
     def set_movie
-        @movie = Movie.find_by(id: params[:id])
+        @movie = Movie.find(params[:id])
     end
 
     def movie_params
-        params.require(:movie).permit(:name, :url, :genre, :ratings, :comments, :released, :user_id)
+        params.require(:movie).permit(:name, :url, :genre, :ratings, :comments, :released, :plot, :awards, :box_office, :metascore, :user_id)
     end
 end

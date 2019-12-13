@@ -1,3 +1,9 @@
+// class FetchAndCompare {
+
+//     constructor() {
+//         this.debounce();
+//     }
+
 const debounce = (func, delay = 1000) => {
     let timeoutId;
     return (...args) => {
@@ -9,3 +15,7 @@ const debounce = (func, delay = 1000) => {
         }, delay)
     }
 }
+
+// }
+
+// const fetchAndCompare = new FetchAndCompare

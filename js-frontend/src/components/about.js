@@ -7,31 +7,30 @@ class About {
 
     addAbout() {
         return `
-        <div class="card">
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img src="none" alt="Placeholder image">
-                </figure>
+            <div class="column is-one-quarter">
             </div>
-            <div class="card-content">
-                <div class="media">
-                    <div class="media-left">
-                        <figure class="image is-48x48">
-                            <img src="" alt="Placeholder image">
-                        </figure>
+            <div class="column">
+                <div class="card">
+                    <div class="card-content">
+                    <h1 class="title">About</h1>
+                    <p>
+                        This application is intended to be used for movie collection, movie comparing as an API Practice. It has no advertising feature, it is not intended for commercial use.
+                    </p>
+                    <p>
+                        The owner of this Web Application is a young enthusiast, learning programming as a beginner level.
+                    </p>
                     </div>
-                    <div class="media-content">
-                        <p class="title is-4">My Name is</p>
-                        <p class="subtitle is-6"></p>
+                    <footer class="card-footer">
+                        <p class="card-footer-item">
+                            <span>
+                            “There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.” - <em>Jeff Atwood</em>
+                            </span>
+                        </p>
+                        </footer>
                     </div>
                 </div>
-                <div class="content">
-                    <p></p><n /> 
-                    <p>IMDB Rating: </p>
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                </div>
+            <div class="column is-one-quarter">
             </div>
-        </div>
         `;
     }
 
@@ -44,7 +43,7 @@ class About {
                 e.style.display = 'none';
             });
             this.displayAbout();
-            const columnCardDisplay = document.querySelector('.column');
+            const columnCardDisplay = document.querySelector('.columns');
             columnCardDisplay.innerHTML += this.addAbout();
         })
     }
