@@ -13,6 +13,7 @@ class App {
     // }
 
     constructor() {
-        this.movies = new Movies();
+        // this.movies = new Movies();
+        // this.triggerAbout = new About();
     }
 }

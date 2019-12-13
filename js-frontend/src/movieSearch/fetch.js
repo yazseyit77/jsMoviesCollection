@@ -2,7 +2,7 @@
 // var apikey = "f6fd5f9b";
 // const url = "https://www.omdbapi.com/?apikey=" + apikey + "&t=" + sMovie;
 // const ohterParams = {
-//   method: "POST"
+//   method: "GET"
 // };
 // function fetchData(searchTerm) {
 //     fetch(url, ohterParams)
