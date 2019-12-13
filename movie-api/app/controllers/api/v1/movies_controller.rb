@@ -5,6 +5,10 @@ class Api::V1::MoviesController < ApplicationController
         @movies = Movie.all
 
         render json: @movies.to_json(:include => {:user => {:only => [:name]}}, :except => [:created_at, :updated_at]), status: 200
+
+
+        # @movies = Api.get_movies
+        # render json: @movies
     end
 
     def show
