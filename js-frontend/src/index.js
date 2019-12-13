@@ -2,9 +2,9 @@ const autoCompleteConfig = {
     renderOption(movie) {
         const imgSrc = movie.Poster === "N/A" ? "" : movie.Poster;
         return `
-          <img src="${imgSrc}" />
-          ${movie.Title} (${movie.Year})
-      `
+            <img src="${imgSrc}" />
+            ${movie.Title} (${movie.Year})
+        `
     },
 
     //triggers onMovieSelect from autocomplete.js
