@@ -1,7 +1,6 @@
 class Api < ApplicationRecord
     def self.get_movies(movies)
-        # name = "avengers"
-        url = "https://www.omdbapi.com/?apikey=f6fd5f9b&t=#{movies}"
+        url = "https://api.themoviedb.org/3/search/movie?api_key=c45be98a3e375a031f8dda83cfc52f39&language=en-US&query=#{movies}&page=1&include_adult=false"
         resp = RestClient.get(url)
         # byebug
         movies_hash = JSON(resp.body)

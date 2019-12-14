@@ -7,7 +7,7 @@ class Api::V1::MoviesController < ApplicationController
         render json: @movies.to_json(:include => {:user => {:only => [:name]}}, :except => [:created_at, :updated_at]), status: 200
 
 
-        # @movies = Api.where("shooter")
+        # @movies = Api.get_movies("avengers")
         # render json: @movies
     end
 

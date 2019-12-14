@@ -16,6 +16,7 @@ class Movies {
 
     moviesCard(movie) {
         return `
+        <div class="col-md-4">
             <div class="card">
                 <div class="card-image">
                     <figure class="image is-4by3">
@@ -41,11 +42,12 @@ class Movies {
                     </div>
                 </div>
             </div>
+        </div>
         `;
     }
 
     displayMovies(movie) {
-        const movieGrid = document.querySelector('.column')
+        const movieGrid = document.querySelector('.row')
         movieGrid.innerHTML += this.moviesCard(movie);
     }
 

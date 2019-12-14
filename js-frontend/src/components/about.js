@@ -2,14 +2,11 @@ class About {
     constructor() {
         this.loadAbout();
         this.addAbout();
-        this.displayAbout();
     }
 
     addAbout() {
         return `
-            <div class="column is-one-quarter">
-            </div>
-            <div class="column">
+        <div class="col-md-10">
                 <div class="card">
                     <div class="card-content">
                     <h1 class="title">About</h1>
@@ -29,8 +26,6 @@ class About {
                         </footer>
                     </div>
                 </div>
-            <div class="column is-one-quarter">
-            </div>
         `;
     }
 
@@ -38,20 +33,14 @@ class About {
         const aboutBtn = document.querySelector('.about')
         aboutBtn.addEventListener("click", (e) => {
             e.preventDefault();
-            const columnCard = document.querySelectorAll('.column');
+            const columnCard = document.querySelectorAll('.col-md-4');
             columnCard.forEach(function (e) {
                 e.style.display = 'none';
             });
-            this.displayAbout();
-            const columnCardDisplay = document.querySelector('.columns');
+            const columnCardDisplay = document.querySelector('.row');
             columnCardDisplay.innerHTML += this.addAbout();
-        })
+        });
     }
-
-    displayAbout() {
-
-    }
-
 }
 
 let triggerAbout = new About();
