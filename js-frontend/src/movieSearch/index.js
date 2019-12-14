@@ -20,11 +20,9 @@ const autoCompleteConfig = {
                 // i: "tt0848228" //to search by movie_id
             }
         });
-
         if (response.data.Error) {
             return [];
         }
-
         return response.data.Search;
     }
 };

@@ -42,5 +42,5 @@ class MoviesCompare {
 }
 
 
-const trigger = new MoviesCompare;
-trigger.triggerMoviesCompare();
+// const trigger = new MoviesCompare;
+// trigger.triggerMoviesCompare();

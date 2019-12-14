@@ -1,15 +1,16 @@
 class About {
     constructor() {
         this.loadAbout();
-        this.addAbout();
     }
 
     addAbout() {
         return `
-        <div class="col-md-10">
+        <div class="row justify-content-md-center">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-content">
-                    <h1 class="title">About</h1>
+                    <h1 class="text-center">About</h1>
+                    <br>
                     <p>
                         This application is intended to be used for movie collection, movie comparing as an API Practice. It has no advertising feature, it is not intended for commercial use.
                     </p>
@@ -26,6 +27,7 @@ class About {
                         </footer>
                     </div>
                 </div>
+            </div>
         `;
     }
 
@@ -33,15 +35,14 @@ class About {
         const aboutBtn = document.querySelector('.about')
         aboutBtn.addEventListener("click", (e) => {
             e.preventDefault();
-            const columnCard = document.querySelectorAll('.col-md-4');
-            columnCard.forEach(function (e) {
-                e.style.display = 'none';
-            });
-            const columnCardDisplay = document.querySelector('.row');
+            const columnCard = document.querySelector('.row');
+            columnCard.style.display = 'none';
+
+            const columnCardDisplay = document.querySelector('.container');
             columnCardDisplay.innerHTML += this.addAbout();
         });
     }
 }
 
 let triggerAbout = new About();
-triggerAbout.loadAbout();
+// triggerAbout.loadAbout();
