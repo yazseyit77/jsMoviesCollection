@@ -4,7 +4,7 @@ class Api::V1::MoviesController < ApplicationController
     def index
         @movies = Movie.all
 
-        render json: @movies.to_json(:include => {:user => {:only => [:name]}}, :except => [:created_at, :updated_at]), status: 200
+        render json: @movies.to_json(:include => {:user => {:only => [:name]}, :reviews => {:only => [:rating, :comment]}}, :except => [:created_at, :updated_at]), status: 200
 
 
         # @movies = Api.get_movies("avengers")
@@ -19,7 +19,7 @@ class Api::V1::MoviesController < ApplicationController
     def create
         @movie = Movie.new(movie_params)
         if @movie.save
-            render json: @movie.to_json(:include => {:user => {:only => [:name]}}, :except => [:created_at, :updated_at]), status: 200
+            render json: @movie.to_json(:include => {:user => {:only => [:name]}, :reviews => {:only => [:rating, :comment]}}, :except => [:created_at, :updated_at]), status: 200
         else
             render json: ("Movie was not saved!").to_json
         end
@@ -28,7 +28,7 @@ class Api::V1::MoviesController < ApplicationController
     def update
         @movie.update(movie_params)
 
-        render json: ("Movie was deleted!").to_json, status: 200
+        render json: ("Movie was updated!").to_json, status: 200
     end
 
     def destroy
