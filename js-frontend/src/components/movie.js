@@ -1,7 +1,7 @@
 class Movie {
     constructor() {
         this.eachMovie();
-        // this.getMovieData();
+        this.getReview();
         // this.oneMovieCard();
     }
 
@@ -56,11 +56,19 @@ class Movie {
                         <p>${movie.plot}</p><n /> 
                         <p>IMDB Rating: ${movie.ratings}</p>
                     </div>
-                    </div>
+                    <div class="review-input">
+                        <input placeholder="Add review"></input>
+                        <input type="submit" value="Add"></input>
+                    <div>
+                </div>
             </div>
         </div>
         `;
     } //onMovieCard func
+
+    getReview() {
+        fetch("http://localhost:3000/api/v1/reviews").then(resp => resp.json()).then(revs => console.log(revs))
+    }
 
 
 } //class closing brackets
