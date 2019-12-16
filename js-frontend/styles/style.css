@@ -28,7 +28,8 @@ figure .image img {
 }
 
 .hero {
-    margin-bottom: 20px;
+    height: 100px;
+    margin-bottom: 40px;
 }
 
 .forms {

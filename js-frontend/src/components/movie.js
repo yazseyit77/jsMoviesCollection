@@ -1,7 +1,9 @@
 class Movie {
     constructor() {
         this.eachMovie();
-        this.getReview();
+        // this.getReview();
+        // this.postReview();
+        // this.addReview();
         // this.oneMovieCard();
     }
 
@@ -9,9 +11,10 @@ class Movie {
         const eachCard = document.querySelector(".with-margin");
         eachCard.addEventListener('click', e => {
             if (e.target.className === "movie-title") {
-                // console.log(e)
                 const columnCard = document.querySelector('.row');
+                const columnCard1 = document.querySelector('.row1');
                 columnCard.style.display = 'none'
+                columnCard1.style.display = 'none'
 
                 const movieId = e.target.parentElement.parentElement.parentElement.parentElement.parentElement.id
                 this.getMovieData(movieId);
@@ -56,19 +59,34 @@ class Movie {
                         <p>${movie.plot}</p><n /> 
                         <p>IMDB Rating: ${movie.ratings}</p>
                     </div>
-                    <div class="review-input">
-                        <input placeholder="Add review"></input>
-                        <input type="submit" value="Add"></input>
-                    <div>
                 </div>
             </div>
         </div>
         `;
     } //onMovieCard func
 
-    getReview() {
-        fetch("http://localhost:3000/api/v1/reviews").then(resp => resp.json()).then(revs => console.log(revs))
-    }
+    // addReview(review) {
+    //     return `
+    //         <div class="card-footer-item">
+    //             <p></p>
+    //         </div>
+    //     `;
+    // }
+
+    // getReview() {
+    //     fetch("http://localhost:3000/api/v1/reviews").then(resp => resp.json()).then(revs => console.log(revs))
+    // }
+
+    // postReview() {
+    //     const reviewInput = document.querySelector(".review-input");
+    //     reviewInput.addEventListener('click', e => {
+    //         // if (e.target.className === "movie-title") {
+    //         console.log(e)
+    //         // const movieId = e.target.parentElement.parentElement.parentElement.parentElement.parentElement.id
+    //         // this.getMovieData(movieId);
+    //         // }
+    //     })
+    // }
 
 
 } //class closing brackets

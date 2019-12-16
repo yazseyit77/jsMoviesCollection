@@ -4,26 +4,50 @@
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css" />
     <link rel="stylesheet" href="styles/style.css" />
 </head>
 
 <body>
     <section class="hero is-info is-bold">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    Compare Movies
+        <nav class="navbar is-transparent">
+            <div class="navbar-brand">
+                <h1 class="title" style="margin-top: 15px; margin-right: 15px; margin-left: 15px;">
                     <span class="icon">
                         <i class="fas fa-film"></i>
                     </span>
+                    Movies
                 </h1>
+                <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-        </div>
+
+            <div id="navbarExampleTransparentExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="home navbar-item" href="movieApi.html">
+                        Home
+                    </a>
+                    <a class="movies navbar-item" href="moviePage.html">
+                        Movie
+                    </a>
+                    <a class="compare navbar-item" href="index.html">
+                        Compare
+                    </a>
+                    <a class="about navbar-item" href="components/about.js">
+                        About
+                    </a>
+                </div>
+            </div>
+        </nav>
     </section>
 
     <div class="container">
-        <div class="columns">
+        <div class="columns row">
             <div class="column">
                 <div id="left-autocomplete"></div>
                 <div id="left-summary"></div>
@@ -35,7 +59,7 @@
             </div>
         </div>
 
-        <div class="column is-half notification is-info tutorial">
+        <div class="column row is-half notification is-info tutorial">
             <h1 class="title">Search For a Movie on Both Sides</h1>
             <p class="subtitle">We will tell you which is best!</p>
         </div>
@@ -53,6 +77,7 @@
     <script src="src/movieSearch/utils.js"></script>
     <script src="src/movieSearch/autocomplete.js"></script>
     <script src="src/movieSearch/index.js"></script>
+    <script src="src/components/about.js"></script>
 </body>
 
 </html>

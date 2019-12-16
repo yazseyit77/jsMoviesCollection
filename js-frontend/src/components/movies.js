@@ -1,6 +1,6 @@
 class Movies {
     constructor() {
-        this.movies = [];
+        // this.movies = [];
         this.adapter = new MoviesLoader();
         this.fetchAndLoadMovies();
     }
