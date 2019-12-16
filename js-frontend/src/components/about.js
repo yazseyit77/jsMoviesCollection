@@ -9,7 +9,7 @@ class About {
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-content">
-                    <h1 class="text-center">About</h1>
+                    <h1 class=" title text-center">About</h1>
                     <br>
                     <p>
                         This application is intended to be used for movie collection, movie comparing as an API Practice. It has no advertising feature, it is not intended for commercial use.
@@ -21,7 +21,7 @@ class About {
                     <footer class="card-footer">
                         <p class="card-footer-item">
                             <span>
-                            “There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.” - <em>Jeff Atwood</em>
+                            'There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.' - <em>Jeff Atwood</em>
                             </span>
                         </p>
                         </footer>
@@ -35,6 +35,8 @@ class About {
         const aboutBtn = document.querySelector('.about')
         aboutBtn.addEventListener("click", (e) => {
             e.preventDefault();
+            const notify = document.querySelector('.with-margin');
+            notify.style.display = 'none';
             const columnCard = document.querySelector('.row');
             columnCard.style.display = 'none';
 
@@ -45,4 +47,3 @@ class About {
 }
 
 let triggerAbout = new About();
-// triggerAbout.loadAbout();
