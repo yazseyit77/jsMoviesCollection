@@ -25,7 +25,6 @@ class CreateMovie {
     } // fromToggle
 
     create() {
-        // const formData = this.getFormData();
         const button = document.querySelector('.create');
         button.addEventListener("click", (e) => {
             e.preventDefault();
@@ -39,8 +38,9 @@ class CreateMovie {
                 }).then(resp => resp.json())
                 .then(movie => {
                     this.loadMovie.fetchAndLoadMovies(movie);
-                })
-        })
+                }) //fetch
+            // document.getElementById("msg").innerHTML = "The Movie is successfully created!";
+        }) //addEventListener
     } // create func
 
     getFormData() {

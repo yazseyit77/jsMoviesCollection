@@ -16,42 +16,42 @@
 // }
 
 
-function fetchData(searchTerm) {
-    var apikey = "f6fd5f9b";
-    const ohterParams = {
-        method: "GET"
-    };
-    const url = "http://localhost:3000/api/v1/movies/" + searchTerm;
-    fetch(url, ohterParams)
-        .then(response => {
-            return response.json();
-        })
-        .then(res => {
-            console.log(res);
-        });
+// function fetchData(searchTerm) {
+//     var apikey = "f6fd5f9b";
+//     const ohterParams = {
+//         method: "GET"
+//     };
+//     const url = "http://localhost:3000/api/v1/movies/" + searchTerm;
+//     fetch(url, ohterParams)
+//         .then(response => {
+//             return response.json();
+//         })
+//         .then(res => {
+//             console.log(res);
+//         });
 
-    if (response.data.Error) {
-        return [];
-    }
+//     if (response.data.Error) {
+//         return [];
+//     }
 
-    return response.data.Search;
-}
+//     return response.data.Search;
+// }
 
-async fetchData(searchTerm) {
-    const response = await axios.get("http://www.omdbapi.com", {
-        params: {
-            apikey: "f6fd5f9b",
-            s: searchTerm //to search by name
-            // i: "tt0848228" //to search by movie_id
-        }
-    });
+// async fetchData(searchTerm) {
+//     const response = await axios.get("http://www.omdbapi.com", {
+//         params: {
+//             apikey: "f6fd5f9b",
+//             s: searchTerm //to search by name
+//             // i: "tt0848228" //to search by movie_id
+//         }
+//     });
 
-    if (response.data.Error) {
-        return [];
-    }
+//     if (response.data.Error) {
+//         return [];
+//     }
 
-    return response.data.Search;
-}
+//     return response.data.Search;
+// }
 
 // //other api
 // // my api key = c45be98a3e375a031f8dda83cfc52f39
@@ -84,5 +84,5 @@ async fetchData(searchTerm) {
 
 
 
-// games api very easy to fetch
+// games api very easy to fetch (url: https://api.rawg.io/docs/#tag/games)
 // fetch("https://api.rawg.io/api/games").then(resp => resp.json()).then(resp => resp.results.forEach(e => {console.log(e)}))
