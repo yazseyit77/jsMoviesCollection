@@ -19,7 +19,7 @@ class Movies {
         <div class="col-md-4">
             <div class="card" id="${movie.id}">
                 <div class="card-image">
-                    <figure class="image is-4by3">
+                    <figure class="image is-3.75by3">
                         <img src="${movie.url}" alt="Placeholder image">
                     </figure>
                 </div>
@@ -39,7 +39,7 @@ class Movies {
                         <p>${movie.plot}</p><n /> 
                         <p>IMDB Rating: ${movie.ratings}</p>
                     </div>
-                    </div>
+                </div>
             </div>
         </div>
         `;

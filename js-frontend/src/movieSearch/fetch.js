@@ -81,3 +81,8 @@ async fetchData(searchTerm) {
 
 // from this api in ruby backend:
 // fetch("http://localhost:3000/api/v1/movies").then(resp => resp.json()).then(resp => console.log(resp))
+
+
+
+// games api very easy to fetch
+// fetch("https://api.rawg.io/api/games").then(resp => resp.json()).then(resp => resp.results.forEach(e => {console.log(e)}))

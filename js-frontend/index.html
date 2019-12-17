@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
     <link rel="stylesheet" href="styles/style.css" />
+
+    <title>Movies</title>
 </head>
 
 <body>
     <section class="hero is-info is-bold">
+
         <nav class="navbar is-transparent">
             <div class="navbar-brand">
                 <h1 class="title" style="margin-top: 15px; margin-right: 15px; margin-left: 15px;">
@@ -29,10 +34,10 @@
 
             <div id="navbarExampleTransparentExample" class="navbar-menu">
                 <div class="navbar-start">
-                    <a class="home navbar-item" href="movieApi.html">
+                    <a class="home navbar-item" href="index.html">
                         Home
                     </a>
-                    <a class="compare navbar-item" href="index.html">
+                    <a class="compare navbar-item" href="compare.html">
                         Compare
                     </a>
                     <a class="about navbar-item" href="components/about.js">
@@ -40,25 +45,41 @@
                     </a>
                 </div>
             </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button btnToggle is-dark is-rounded is-small">
+                            Add Movie
+                        </a>
+                    </div>
+                </div>
+            </div>
         </nav>
     </section>
 
+
     <div class="container">
-        <div class="columns row">
-            <div class="column">
-                <div id="left-autocomplete"></div>
-                <div id="left-summary"></div>
+        <form class="row1" style="width: 50%;">
+            <div class="field has-addons">
+                <div class="">
+                    <input class="name input is-rounded is-small" type="text" placeholder="Movie name">
+                    <input class="year input is-rounded is-small" type="text" placeholder="Movie year">
+                    <input class="genre input is-rounded is-small" type="text" placeholder="Movie genre">
+                    <input class="picture input is-rounded is-small" type="text" placeholder="Movie picture">
+                    <input class="summary input is-rounded is-small" type="text" placeholder="Movie summary">
+                    <input class="rating input is-rounded is-small" type="text" placeholder="IMDB rating">
+                    <a class="create button is-dark is-rounded is-small">
+                        Create
+                    </a>
+                </div>
+                <div class="">
+                </div>
             </div>
+        </form>
+        <br>
 
-            <div class="column">
-                <div id="right-autocomplete"></div>
-                <div id="right-summary"></div>
-            </div>
-        </div>
-
-        <div class="column is-half notification is-info tutorial with-margin">
-            <h1 class="title">Search For a Movie on Both Sides</h1>
-            <p class="subtitle">We will tell you which is best!</p>
+        <div class="row with-margin">
         </div>
     </div>
 
@@ -71,10 +92,24 @@
         </div>
     </footer>
 
-    <script src="src/movieSearch/utils.js"></script>
-    <script src="src/movieSearch/autocomplete.js"></script>
-    <script src="src/movieSearch/index.js"></script>
+
+    <script src="src/adapters/adapters.js"></script>
+    <script src="src/components/app.js"></script>
     <script src="src/components/about.js"></script>
+    <script src="src/components/movie.js"></script>
+    <script src="src/components/movies.js"></script>
+    <script src="src/components/createMovie.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
