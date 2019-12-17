@@ -50,6 +50,6 @@ class Movies {
         movieGrid.innerHTML += this.moviesCard(movie);
     }
 
-}
+} // Movies class
 
-let movies = new Movies()
+let movies = new Movies();
