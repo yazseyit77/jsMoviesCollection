@@ -47,11 +47,14 @@
 
             <div class="navbar-end">
                 <div class="navbar-item">
+
+
                     <div class="buttons">
                         <a class="button btnToggle is-dark is-rounded is-small">
                             Add Movie
                         </a>
                     </div>
+
                 </div>
             </div>
         </nav>
@@ -60,8 +63,8 @@
 
     <div class="container">
         <p id="msg"></p>
-        <form class="row1" style="width: 50%;">
-            <div class="field has-addons">
+        <form class="row1 columns" style="width: 50%;">
+            <div class="field has-addons column">
                 <div class="">
                     <input class="name input is-rounded is-small" type="text" placeholder="Movie name">
                     <input class="year input is-rounded is-small" type="text" placeholder="Movie year">
@@ -74,6 +77,17 @@
                     </a>
                 </div>
                 <div class="">
+                </div>
+            </div>
+
+            <div class="field column">
+                <div class="control">
+                    <input class="input is-small is-rounded book_search" type="text" placeholder="Search a movie name">
+                </div>
+                <div class="control">
+                    <a class="button is-dark is-small is-rounded">
+                        Search
+                    </a>
                 </div>
             </div>
         </form>

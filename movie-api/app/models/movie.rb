@@ -4,4 +4,5 @@ class Movie < ApplicationRecord
   validates :name, presence: true
   validates :url, presence: true
   validates :plot, length: { minimum: 50 }
-end
+  
+  end

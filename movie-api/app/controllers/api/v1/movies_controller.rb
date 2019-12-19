@@ -1,16 +1,13 @@
 class Api::V1::MoviesController < ApplicationController
-    before_action :set_movie, only: [ :update, :destroy]
+    before_action :set_movie, only: [:show, :update, :destroy]
 
     def index
         @movies = Movie.all
         render json: @movies.to_json(:include => {:user => {:only => [:name]}, :reviews => {:only => [:rating, :comment]}}, :except => [:created_at, :updated_at]), status: 200
-
+        
         # @movies = Api.get_movies("avengers")
         # render json: @movies
-    end
-
     def show
-        @movie = Api.get_movies(movie)
         render json: @movie, status: 200
     end
 
