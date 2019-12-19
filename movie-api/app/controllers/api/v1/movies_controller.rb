@@ -3,11 +3,10 @@ class Api::V1::MoviesController < ApplicationController
 
     def index
         @movies = Movie.all
-        render json: @movies.to_json(:include => {:user => {:only => [:name]}, :reviews => {:only => [:rating, :comment]}}, :except => [:created_at, :updated_at]), status: 200
-        
-        # @movies = Api.get_movies("avengers")
-        # render json: @movies
+        render json: @movies.to_json(:include => {:user => {:only => [:name]}}, :except => [:created_at, :updated_at]), status: 200
+
     end
+
 
     def show
         render json: @movie, status: 200
@@ -16,7 +15,7 @@ class Api::V1::MoviesController < ApplicationController
     def create
         @movie = Movie.new(movie_params)
         if @movie.save
-            render json: @movie.to_json(:include => {:user => {:only => [:name]}, :reviews => {:only => [:rating, :comment]}}, :except => [:created_at, :updated_at]), status: 200
+            render json: @movie.to_json(:include => {:user => {:only => [:name]}}, :except => [:created_at, :updated_at]), status: 200
         else
             render json: ("Movie was not saved!").to_json
         end
@@ -38,6 +37,6 @@ class Api::V1::MoviesController < ApplicationController
     end
 
     def movie_params
-        params.require(:movie).permit(:name, :url, :genre, :ratings, :comments, :released, :plot, :awards, :box_office, :metascore, :user_id)
+        params.require(:movie).permit(:search, :name, :url, :genre, :ratings, :comments, :released, :plot, :awards, :box_office, :metascore, :user_id)
     end
 end
