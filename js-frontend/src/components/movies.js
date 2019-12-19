@@ -1,8 +1,8 @@
 class Movies {
     constructor() {
-        // this.movies = [];
         this.adapter = new MoviesLoader();
         this.fetchAndLoadMovies();
+        this.deleteMovie();
     }
 
     fetchAndLoadMovies() {
@@ -19,7 +19,7 @@ class Movies {
         <div class="col-md-4">
             <div class="card" id="${movie.id}">
                 <div class="card-image">
-                    <figure class="image is-3.75by3">
+                    <figure class="image is-3.85by3">
                         <img src="${movie.url}" alt="Placeholder image">
                     </figure>
                 </div>
@@ -37,7 +37,14 @@ class Movies {
                     </div>
                     <div class="content">
                         <p>${movie.plot}</p><n /> 
-                        <p>IMDB Rating: ${movie.ratings}</p>
+                        <p>IMDB Rating: ${movie.ratings}
+                            <button id="deleteBtn" class="button is-danger is-outlined is-pulled-right is-small">
+                                <span>Remove</span>
+                                <span class="icon is-small">
+                                    <i class="fas fa-times"></i>
+                                </span>
+                            </button>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -49,6 +56,25 @@ class Movies {
         const movieGrid = document.querySelector('.row')
         movieGrid.innerHTML += this.moviesCard(movie);
     }
+
+    deleteMovie() {
+        const eachCard = document.querySelector(".with-margin");
+        eachCard.addEventListener('click', e => {
+            e.preventDefault();
+            if (e.target.parentElement.id === "deleteBtn") {
+                const movieId = e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.id;
+                fetch(`http://localhost:3000/api/v1/movies/${movieId}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Content-type': 'application/json; charset=UTF-8'
+                        }
+                    }).then(resp => resp.json())
+                    .then(res => res)
+                window.location.reload(true); //reloads the page from server + clears the browser cache
+            } // if
+            // window.location.reload(false);
+        })
+    } // deleteMovie()
 
 } // Movies class
 

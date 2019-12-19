@@ -1,10 +1,6 @@
 class Movie {
     constructor() {
         this.eachMovie();
-        // this.getReview();
-        // this.postReview();
-        // this.addReview();
-        // this.oneMovieCard();
     }
 
     eachMovie() {
@@ -26,7 +22,6 @@ class Movie {
     getMovieData(movieId) {
         const url = `http://localhost:3000/api/v1/movies/${movieId}`
         fetch(url).then(resp => resp.json()).then(movie => {
-            // this.oneMovieCard(movie)
             const columnCardDisplay = document.querySelector('.container');
             columnCardDisplay.innerHTML += this.oneMovieCard(movie);
         });
@@ -65,31 +60,7 @@ class Movie {
         `;
     } //onMovieCard func
 
-    // addReview(review) {
-    //     return `
-    //         <div class="card-footer-item">
-    //             <p></p>
-    //         </div>
-    //     `;
-    // }
-
-    // getReview() {
-    //     fetch("http://localhost:3000/api/v1/reviews").then(resp => resp.json()).then(revs => console.log(revs))
-    // }
-
-    // postReview() {
-    //     const reviewInput = document.querySelector(".review-input");
-    //     reviewInput.addEventListener('click', e => {
-    //         // if (e.target.className === "movie-title") {
-    //         console.log(e)
-    //         // const movieId = e.target.parentElement.parentElement.parentElement.parentElement.parentElement.id
-    //         // this.getMovieData(movieId);
-    //         // }
-    //     })
-    // }
-
-
 } //class closing brackets
 
 
-const clickTitle = new Movie();
+// const clickTitle = new Movie();

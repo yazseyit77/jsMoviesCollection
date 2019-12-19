@@ -7,6 +7,8 @@ class Api::V1::MoviesController < ApplicationController
         
         # @movies = Api.get_movies("avengers")
         # render json: @movies
+    end
+
     def show
         render json: @movie, status: 200
     end

@@ -3,7 +3,6 @@ class CreateMovie {
         this.formToggle();
         this.create();
         this.getFormData();
-        this.loadMovie = new Movie();
     }
 
     formToggle() {
@@ -27,7 +26,7 @@ class CreateMovie {
     create() {
         const button = document.querySelector('.create');
         button.addEventListener("click", (e) => {
-            e.preventDefault();
+            // e.preventDefault();
             // console.log(name.value)
             fetch("http://localhost:3000/api/v1/movies", {
                     method: "POST",
@@ -39,7 +38,7 @@ class CreateMovie {
                 .then(movie => {
                     this.loadMovie.fetchAndLoadMovies(movie);
                 }) //fetch
-            // document.getElementById("msg").innerHTML = "The Movie is successfully created!";
+            window.location.reload(true); //reloads the page from server + clears the browser cache
         }) //addEventListener
     } // create func
 
@@ -54,7 +53,6 @@ class CreateMovie {
             user_id: 1
         };
     } // getFormData func
-
 
 } //CreateMovie class
 
