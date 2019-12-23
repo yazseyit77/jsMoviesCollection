@@ -1,24 +1,39 @@
-# README
+# PROJECT jsMoviesCollection
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Requirements:
+  For development, you will only need Node.js installed on your environment. And please use the appropriate Edit or config plugin for your Editor (not mandatory).
 
-Things you may want to cover:
+- Node:
+  Node is really easy to install & now include NPM. You should be able to run the following command after the installation procedure below.
 
-* Ruby version
+- node --version
+  v0.10.24
 
-* System dependencies
+- npm --version
+  1.3.21
 
-* Configuration
+- Node installation on OS X
+  You will need to use a Terminal. On OS X, you can find the default terminal in /Applications/Utilities/Terminal.app.
 
-* Database creation
+- Node installation on Windows
+  Just go on official Node.js website & grab the installer. Also, be sure to have git available in your PATH, npm might need it.
 
-* Database initialization
+- Install
+  1. git clone https://github.com/yazseyit77/jsMoviesCollection.git
+  2. cd movie-api
+  3. run 'rails server'
+  4. cd js-frontend
+  5. npm install
+  6. open index.html
 
-* How to run the test suite
+# Languages & tools
 
-* Services (job queues, cache servers, search engines, etc.)
+- HTML
+  Jade for some templating.
+- JavaScript
+  Browserify to handle allow us to write our client-side scripts with es6 syntax thanks to es6ify.
+- CSS
+  Bootstrap and Bulma is used
 
-* Deployment instructions
-
-* ...
+- Static server with Livereload
+  The app embed for development a static connect server with livereload plugged. So each time you start the app, you get automatic refresh in the browser whenever you update a file.

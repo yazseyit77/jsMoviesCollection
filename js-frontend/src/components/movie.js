@@ -1,36 +1,37 @@
 class Movie {
-    constructor() {
-        this.eachMovie();
-    }
+  constructor() {
+    this.eachMovie();
+  }
 
-    eachMovie() {
-        const eachCard = document.querySelector(".with-margin");
-        eachCard.addEventListener('click', e => {
-            if (e.target.className === "movie-title") {
-                const columnCard = document.querySelector('.row');
-                const columnCard1 = document.querySelector('.row1');
-                columnCard.style.display = 'none'
-                columnCard1.style.display = 'none'
+  eachMovie() {
+    const eachCard = document.querySelector(".with-margin");
+    eachCard.addEventListener("click", e => {
+      if (e.target.className === "movie-title") {
+        const columnCard = document.querySelector(".row");
+        const columnCard1 = document.querySelector(".row1");
+        columnCard.style.display = "none";
+        columnCard1.style.display = "none";
 
-                const movieId = e.target.parentElement.parentElement.parentElement.parentElement.parentElement.id
-                this.getMovieData(movieId);
-            }
-        })
+        const movieId =
+          e.target.parentElement.parentElement.parentElement.parentElement
+            .parentElement.id;
+        this.getMovieData(movieId);
+      }
+    });
+  } //eachMovie func
 
-    } //eachMovie func
+  getMovieData(movieId) {
+    const url = `http://localhost:3000/api/v1/movies/${movieId}`;
+    fetch(url)
+      .then(resp => resp.json())
+      .then(movie => {
+        const columnCardDisplay = document.querySelector(".container");
+        columnCardDisplay.innerHTML += this.oneMovieCard(movie);
+      });
+  } //getMovieData func
 
-    getMovieData(movieId) {
-        const url = `http://localhost:3000/api/v1/movies/${movieId}`
-        fetch(url).then(resp => resp.json()).then(movie => {
-            const columnCardDisplay = document.querySelector('.container');
-            columnCardDisplay.innerHTML += this.oneMovieCard(movie);
-        });
-
-    } //getMovieData func
-
-
-    oneMovieCard(movie) {
-        return `
+  oneMovieCard(movie) {
+    return `
         <div class="col-md-12">
             <div class="card" id="">
                 <div class="card-image">
@@ -58,9 +59,7 @@ class Movie {
             </div>
         </div>
         `;
-    } //onMovieCard func
-
+  } //onMovieCard func
 } //class closing brackets
 
-
-// const clickTitle = new Movie();
+const clickTitle = new Movie();
