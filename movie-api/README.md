@@ -9,10 +9,10 @@ Node:
 - Node is really easy to install & now include NPM. You should be able to run the following command after the installation procedure below.
 
 node --version
-v0.10.24
+v13.2.0
 
 npm --version
-1.3.21
+6.13.4
 
 Node installation on OS X
 
