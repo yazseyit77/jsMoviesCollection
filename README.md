@@ -1,5 +1,13 @@
 # PROJECT jsMoviesCollection
 
+This application is built to store your favorite movies, create/edit/delete your collection, or you can compare your favorite movies from IMDB based on the ratings and etc.
+
+[Demo](https://www.youtube.com/watch?v=7IoTzAOkSkg&t=4s)
+
+Snapshot:
+
+![Movies compare page](https://github.com/yazseyit77/jsMoviesCollection/blob/master/js-frontend/styles/moviecompare.png "Compare")
+
 Requirements:
 
 - For development, you will only need Node.js installed on your environment. And please use the appropriate Edit or config plugin for your Editor (not mandatory).
